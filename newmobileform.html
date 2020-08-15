@@ -1,0 +1,165 @@
+<script type="text/javascript">
+	$(document).ready( function() {
+    	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [label]);
+		});
+
+		$('.btn-file :file').on('fileselect', function(event, label) {
+		    
+		    var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+		    
+		    if( input.length ) {
+		        input.val(log);
+		    } else {
+		        if( log ) alert(log);
+		    }
+	    
+		});
+		function readURL(input) {
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+		        
+		        reader.onload = function (e) {
+		            $('#img-upload').attr('src', e.target.result);
+		        }
+		        
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$("#imgInp").change(function(){
+		    readURL(this);
+		}); 	
+	});
+</script>
+
+<style type="text/css">
+	.form-row
+	{
+		margin-top: 50px;
+	}
+	.container.custom-container 
+    {
+    	margin-top: 0px;
+    }
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 50%;
+    min-height: 50%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 50%;
+    position: relative;
+    left: 730px;
+    top:-40px;
+}
+#cobtn
+{
+	position: relative;
+	left: 470px;
+}
+</style>
+
+
+<div class="container custom-container">
+	<h2 align="center">Accessories</h2>
+	<form id="myForm">
+
+		<div class="form-row">
+			<div class="form-group col-lg-6 col-md-6">
+				<label for="inputType">Type</label>
+				<select id="inputType" class="form-control">
+					<option>Earphones</option>
+					<option>Headphones</option>
+					<option>Computer Peripherals</option>
+					<option>Speakers</option>
+					<option>Storage Devices</option>
+					<option>Other</option>
+				</select>
+			</div>
+			<div class="form-group col-lg-6 col-md-6">
+      			<label for="inputBrand">Brand</label>
+      			<input type="text" class="form-control" id="inputBrand" placeholder="eg : Sony">
+    		</div>
+			<div class="form-group col-lg-6 col-md-6">
+      			<label for="inputModel">Model</label>
+      			<input type="text" class="form-control" id="inputModel" placeholder="eg : MDR-X340">
+    		</div>
+			<div class="form-group col-lg-6 col-md-6">
+				<label for="inputYear">Year Of Purchase</label>
+				<select id="inputYear" class="form-control">
+					<option>2017</option>
+					<option>2016</option>
+					<option>2015</option>
+					<option>2014</option>
+					<option>2013</option>
+					<option>Before 2013</option>
+				</select>
+			</div>
+			
+			
+    		<div class="form-group col-lg-6 col-md-6">
+				<label for="inputCond">Physical Condition</label>
+				<select id="inputCond" class="form-control">
+					<option>Excellent</option>
+					<option>Good</option>
+					<option>Fair</option>
+				</select>
+			</div>
+    		<div class="form-group col-lg-6 col-md-6">
+      			<label for="inputPrice">Price</label>
+      			<input type="text" class="form-control" id="inputPrice" placeholder="eg : 32000">
+    		</div>
+    		<div class="form-group col-lg-6 col-md-6">
+      			<label for="inputMob">Mobile Number</label>
+      			<input type="text" class="form-control" id="inputMob" placeholder="eg : 985XXXXXXX">
+    		</div>
+    		<div class="form-group col-lg-6 col-md-6">
+      			<label for="inputPrice">Email id</label>
+      			<input type="email" class="form-control" id="inputPrice" placeholder="eg :  yachint@gmail.com">
+    		</div>
+			 <div class="form-group col-lg-6 col-md-6">
+        		<label>Upload Image</label>
+        		<div class="input-group">
+            		<span class="input-group-btn">
+                	<span class="btn btn-default btn-file">
+                    Browse… <input type="file" id="imgInp"> 
+                	</span>
+            		</span>
+            		<input type="text" class="form-control" readonly>
+        		</div>
+        		<img id='img-upload'/>
+    		</div>
+</div>
+</div>
+    		
+
+
+
+				
+			
+		
+	</form>
+	<button class="btn btn-lg btn-warning" type="submit" id="cobtn" form="myForm">Confirm</button>
+
+
+
+
