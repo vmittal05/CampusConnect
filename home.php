@@ -182,7 +182,11 @@ width: 10rem;
 
       <img src="poly2.jpg" height="150px" width="100%" alt="" />
       
-      <h1 id="head"><img class="footimg" src="ez.png" alt="Logo"></h1>
+      <h1 id="head">
+      <a href="home.html">
+        <img class="footimg" src="ez.png" alt="Logo">
+      </a>
+    </h1>
   </div>
 
 
