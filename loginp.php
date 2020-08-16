@@ -182,6 +182,7 @@ background: #008acc;
 
 .footimg{
 width: 15rem;
+margin-top: 40px;
 }
 
 .footimge{
@@ -270,9 +271,7 @@ width: 10rem;
             <a class="link" href="#">Privacy Policy</a>
             <a class="link" href="#">Terms & Conditions</a>
             <br><br>
-            <p class="white-txt small">
-                Copyright © 2017 EZtrade Inc. All rights reserved.
-            </p>
+            
           </div>
         
         

@@ -469,9 +469,7 @@ if ($result->num_rows > 0) {
             <a class="link" href="#">Privacy Policy</a>
             <a class="link" href="#">Terms & Conditions</a>
             <br><br>
-            <p class="white-txt small">
-                Copyright © 2017 EZtrade Inc. All rights reserved.
-            </p>
+            
           </div>
         
         
